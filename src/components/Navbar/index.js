@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavContainer, MenuBars, MenuLinks, NavLink, MenuContainer, LogoContainer, LogoName, LifeWindLogo } from './styled';
 import Button from '../Button';
+import CreateAccount from "../AccountModal/CreateAccount";
 
 const linkPages = ["News", "Blogs"];
 
 const Navbar = () => {
+  const [isCreateAcctModalActive, activateCreateAcctModal] = useState(false);
+  const [isLogInModalActive, activateLogInModal] = useState(false);
+
+  const handleJoinOnclick = () => activateCreateAcctModal(!isCreateAcctModalActive);
+  const handleLogInOnclick = () => activateLogInModal(!isLogInModalActive);
+
   return (
     <>
       <NavContainer>
@@ -25,7 +32,7 @@ const Navbar = () => {
             <NavLink to="/">
               BLOG
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/" onClick={handleJoinOnclick}>
               JOIN
             </NavLink>
           </MenuLinks>
@@ -34,6 +41,7 @@ const Navbar = () => {
           </Button>
         </MenuContainer>
       </NavContainer>
+      <CreateAccount active={isCreateAcctModalActive} onClick={handleJoinOnclick}/>
     </>
   )
 };

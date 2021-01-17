@@ -51,7 +51,7 @@ export const FooterLink = styled(NavLink)`
 
   &:hover {
     color: white;
-    text-decoration: none !important;
+    text-decoration: none;
   }
 `;
 

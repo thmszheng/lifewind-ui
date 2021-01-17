@@ -1,4 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const primaryButtonStyles = css`
+  color: white;
+  background-color: #242736;
+  border-color: #242736;
+`;
+
+const secondaryButtonStyles = css`
+  color: black;
+  background-color: white;
+  border-color: white;
+`;
+
+const buttonStyles = {
+  primary: primaryButtonStyles,
+  secondary: secondaryButtonStyles,
+};
 
 export const StyledButton = styled.button`
   border-radius: 4px;
@@ -11,11 +28,16 @@ export const StyledButton = styled.button`
   font-family: "Lucida Sans Unicode";
   font-size: 15px;
   font-weight: bold;
-  color: black;
   
   width: 100px;
   height: 35px;
-  background-color: white;
-  border-color: white;
   text-align: center;
+  
+  ${({ width }) => width && `
+    width: ${width};
+  `};
+  
+  ${({ btnStyle }) => `
+    ${buttonStyles[btnStyle]}
+  `};
 `;
