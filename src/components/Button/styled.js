@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const primaryButtonStyles = css`
   color: white;
@@ -21,20 +21,28 @@ export const StyledButton = styled.button`
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  
+
   text-decoration: none;
   cursor: pointer;
-  
+
   font-family: "Lucida Sans Unicode";
   font-size: 15px;
   font-weight: bold;
-  
-  ${({ width, height }) => width && `
+
+  ${({ width, height }) =>
+    width &&
+    `
     width: ${width};
     height: ${height};
   `};
-  
+
   ${({ btnStyle }) => `
     ${buttonStyles[btnStyle]}
+  `};
+  
+  ${({ hide }) =>
+    hide &&
+    `
+    display: none;
   `};
 `;

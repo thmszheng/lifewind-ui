@@ -1,12 +1,8 @@
-import {
-  LOGIN,
-  SAVE_LOGIN,
-  CREATE_ACCOUNT
-} from './types';
+import { LOGIN, SAVE_LOGIN, CREATE_ACCOUNT } from "./types";
 
-const createAction = type => payload => ({
+const createAction = (type) => (payload) => ({
   type,
-  payload
+  payload,
 });
 
 export const login = createAction(LOGIN);

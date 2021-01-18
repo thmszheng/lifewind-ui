@@ -1,6 +1,4 @@
-import {
-  SAVE_LOGIN
-} from "../actions/types";
+import { SAVE_LOGIN } from "../actions/types";
 import { saveLogin } from "../selectors";
 
 export default (state = {}, { type, payload }) => {

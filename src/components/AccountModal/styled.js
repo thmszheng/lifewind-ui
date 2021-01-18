@@ -1,26 +1,28 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { CgClose } from "react-icons/cg";
-import { Field } from 'redux-form';
+import { Field } from "redux-form";
 
 export const AccountModalOverlay = styled.div`
   position: fixed;
   z-index: -1;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0);
-  
+  background-color: rgba(255, 255, 255, 0);
+
   -webkit-transition: background-color 0.2s ease-in;
   -moz-transition: background-color 0.2s ease-in;
   -ms-transition: background-color 0.2s ease-in;
   -o-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
-  
-  ${({ active }) => active && `
+
+  ${({ active }) =>
+    active &&
+    `
     z-index: 200;
     background-color: rgba(255,255,255,0.6);
   `};
@@ -32,7 +34,7 @@ export const ModalContainer = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0.5);
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,28 +42,29 @@ export const ModalContainer = styled.div`
   width: 600px;
   height: 600px;
   padding: 10px;
-  
+
   opacity: 0;
-  
+
   -webkit-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
-  -ms-transition:opacity 0.2s ease-in, transform 0.2s ease-in;
+  -ms-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   transition: opacity 0.2s ease-in, transform 0.2s ease-in;
-    
+
   background-color: white;
   -moz-box-shadow: 0 0 4px grey;
   -webkit-box-shadow: 0 0 4px grey;
   box-shadow: 0 0 4px grey;
-  
-  ${({ active }) => active && `
+
+  ${({ active }) =>
+    active &&
+    `
     z-index: 300;
     display: flex;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   `};
-  
-  
+
   @media screen and (max-width: 750px) {
     width: 100%;
     height: 100%;
@@ -112,7 +115,7 @@ export const FormField = styled(Field)`
   font-size: 18px;
   font-family: "Lucida Sans Unicode";
   margin: 15px;
-  
+
   @media screen and (max-width: 500px) {
     width: 65%;
   }

@@ -1,15 +1,15 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
-const savedLoginSelector = state => state.account.savedLogin || {};
+const savedLoginSelector = (state) => state.account.savedLogin || {};
 
 export const saveLogin = (state, payload) => ({
   ...state,
   savedLogin: {
-    ...payload
-  }
+    ...payload,
+  },
 });
 
 export const getSavedLogin = createSelector(
   savedLoginSelector,
-  object => object
+  (object) => object
 );
