@@ -1,49 +1,10 @@
-import React, { useState } from 'react';
-import { NavContainer, MenuBars, MenuLinks, NavLink, MenuContainer, LogoContainer, LogoName, LifeWindLogo } from './styled';
-import Button from '../Button';
-import CreateAccount from "../AccountModal/CreateAccount";
+import Navbar from './navbar';
+import { connect } from "react-redux";
+import { getSavedLogin } from "../../selectors";
 
-const linkPages = ["News", "Blogs"];
 
-const Navbar = () => {
-  const [isCreateAcctModalActive, activateCreateAcctModal] = useState(false);
-  const [isLogInModalActive, activateLogInModal] = useState(false);
+const mapStateToProps = state => ({
+  savedLogin: getSavedLogin(state)
+});
 
-  const handleJoinOnclick = () => activateCreateAcctModal(!isCreateAcctModalActive);
-  const handleLogInOnclick = () => activateLogInModal(!isLogInModalActive);
-
-  return (
-    <>
-      <NavContainer>
-        <MenuBars/>
-        <NavLink to="/">
-          <LogoContainer>
-            <LogoName>
-              LIFEWIND
-            </LogoName>
-            <LifeWindLogo/>
-          </LogoContainer>
-        </NavLink>
-        <MenuContainer>
-          <MenuLinks>
-            <NavLink to="/">
-              NEWS
-            </NavLink>
-            <NavLink to="/">
-              BLOG
-            </NavLink>
-            <NavLink to="/" onClick={handleJoinOnclick}>
-              JOIN
-            </NavLink>
-          </MenuLinks>
-          <Button>
-            Log In
-          </Button>
-        </MenuContainer>
-      </NavContainer>
-      <CreateAccount active={isCreateAcctModalActive} onClick={handleJoinOnclick}/>
-    </>
-  )
-};
-
-export default Navbar;
+export default connect(mapStateToProps)(Navbar);

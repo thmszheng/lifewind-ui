@@ -9,7 +9,7 @@ export const HeroContainer = styled.section`
   background-repeat: no-repeat;
   
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   
   @media screen and (max-width: 1200px) {
     height: 700px;

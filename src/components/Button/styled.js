@@ -29,12 +29,9 @@ export const StyledButton = styled.button`
   font-size: 15px;
   font-weight: bold;
   
-  width: 100px;
-  height: 35px;
-  text-align: center;
-  
-  ${({ width }) => width && `
+  ${({ width, height }) => width && `
     width: ${width};
+    height: ${height};
   `};
   
   ${({ btnStyle }) => `

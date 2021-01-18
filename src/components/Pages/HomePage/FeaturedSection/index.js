@@ -11,7 +11,7 @@ const FeaturedSection = () => {
       </SectionHeading>
       <FeaturedArticleContainer>
         <ArticleImageWrapper>
-          <img src="/images/featured_image.jpg" alt="Happy Family"/>
+          <img src="/images/featured_image.jpg" alt="happy family"/>
         </ArticleImageWrapper>
         <TextContainer>
           <Heading>

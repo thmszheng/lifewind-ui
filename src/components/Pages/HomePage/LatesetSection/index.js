@@ -12,7 +12,7 @@ const LatestSection = () => {
       </SectionHeading>
       <LatestArticlesContainer>
         <ArticleCard>
-          <img src="/images/latest_image1.jpg" alt="image" />
+          <img src="/images/latest_image1.jpg" alt="happy family" />
           <TextContainer>
             <Heading>
               Life Insurance Offering More Incentive to Live Longer
@@ -27,7 +27,7 @@ const LatestSection = () => {
           </TextContainer>
         </ArticleCard>
         <ArticleCard>
-          <img src="/images/latest_image2.jpg" alt="image" />
+          <img src="/images/latest_image2.jpg" alt="happy family" />
           <TextContainer>
             <Heading>
               Life Insurance From Your Employer Usually Isn’t Enough
@@ -42,7 +42,7 @@ const LatestSection = () => {
           </TextContainer>
         </ArticleCard>
         <ArticleCard>
-          <img src="/images/latest_image3.jpg" alt="image" />
+          <img src="/images/latest_image3.jpg" alt="happy family" />
           <TextContainer>
             <Heading>
               Ways Federal Life, Health and Annuity Legislation Could Evolve
@@ -56,7 +56,7 @@ const LatestSection = () => {
           </TextContainer>
         </ArticleCard>
         <ArticleCard>
-          <img src="/images/latest_image4.jpg" alt="image" />
+          <img src="/images/latest_image4.jpg" alt="happy family" />
           <TextContainer>
             <Heading>
               10 Advantages of Hybrid Life Insurance with Long-Term Care

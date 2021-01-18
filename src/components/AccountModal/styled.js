@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CgClose } from "react-icons/cg";
+import { Field } from 'redux-form';
 
 export const AccountModalOverlay = styled.div`
   position: fixed;
@@ -80,7 +81,7 @@ export const Heading = styled.h2`
   color: #242736;
   font-size: 25px;
   font-family: "Trebuchet MS";
-  margin: -15px 0 15px 0;
+  margin: -50px 0 15px 0;
 `;
 
 export const FormContainer = styled.form`
@@ -89,10 +90,18 @@ export const FormContainer = styled.form`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
 `;
 
-export const FormInput = styled.input`
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+export const FormField = styled(Field)`
   margin: 10px 0 10px 0;
   width: 50%;
   padding: 12px;
@@ -103,4 +112,8 @@ export const FormInput = styled.input`
   font-size: 18px;
   font-family: "Lucida Sans Unicode";
   margin: 15px;
+  
+  @media screen and (max-width: 500px) {
+    width: 65%;
+  }
 `;
