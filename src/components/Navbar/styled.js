@@ -57,6 +57,19 @@ export const NavLink = styled(Link)`
   `};
 `;
 
+
+export const NavSagaLink = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
+  margin: 0 25px 0 25px;
+  
+  ${({ hide }) => hide && `
+    display: none;
+  `};
+`;
+
 export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -79,7 +92,11 @@ export const LifeWindLogo = styled(GiPaperWindmill)`
   padding-bottom: 3px;
 `;
 
-export const AccountMenuContainer = styled.div``;
+export const AccountMenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 export const AccountLogo = styled(FaUserCircle)`
   display: none;
@@ -124,8 +141,23 @@ export const  WelcomeHeader = styled.h3`
   font-weight: normal;
   font-size: 20px;
   font-family: "Trebuchet MS";
-`
+`;
+
 export const AccountMenuLink = styled(Link)`
+  color: dimgray;
+  font-size: 16px;
+  font-family: "Trebuchet MS";
+  
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+  
+  &:hover {
+    color: black;
+  }
+`;
+
+export const AccountSagaLink = styled.a`
   color: dimgray;
   font-size: 16px;
   font-family: "Trebuchet MS";

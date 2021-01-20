@@ -14,7 +14,7 @@ function* createAccount({
         preferred_username,
       },
     });
-    console.log(result);
+
   } catch (error) {
     console.log("error signing up:", error);
   }
@@ -25,11 +25,11 @@ function* login({ payload: { email, password } }) {
     const {
       attributes: { preferred_username },
     } = yield Auth.signIn(email, password);
-    console.log(preferred_username);
+
     const tokens = yield Auth.currentSession();
-    console.log(tokens);
+
     const userId = tokens.getIdToken().payload["cognito:username"];
-    console.log(userId);
+
 
     yield put(saveLogin({ userId, username: preferred_username }));
   } catch (error) {

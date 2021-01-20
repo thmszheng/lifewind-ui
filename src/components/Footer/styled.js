@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 
 export const FooterContainer = styled.div`
   background-color: #242736;
@@ -43,7 +43,7 @@ export const LinkHeading = styled.h2`
   font-weight: bold;
 `;
 
-export const FooterLink = styled(NavLink)`
+export const FooterLink = styled(Link)`
   font-size: 15px;
   color: white;
   margin-bottom: 10px;

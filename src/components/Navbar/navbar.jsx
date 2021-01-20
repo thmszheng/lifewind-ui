@@ -13,7 +13,9 @@ import {
   DropdownContainer,
   AccountMenuRow,
   AccountMenuLink,
-  WelcomeHeader
+  WelcomeHeader,
+  AccountSagaLink,
+  NavSagaLink
 } from "./styled";
 import OutsideAlerter from "../../hooks/outsideAlerter";
 import Button from "../Button";
@@ -40,13 +42,13 @@ const Navbar = ({ savedLogin: { userId, username } }) => {
       activateDropdownMenu ? setVisible(false) : setVisible(true);
       activateDropdownMenu(!isDropdownMenuActive);
     }
-  }
+  };
 
   return (
     <>
       <NavContainer>
         <MenuBars />
-        <NavLink to="/">
+        <NavLink to="/" href="/">
           <LogoContainer>
             <LogoName>LIFEWIND</LogoName>
             <LifeWindLogo />
@@ -54,11 +56,11 @@ const Navbar = ({ savedLogin: { userId, username } }) => {
         </NavLink>
         <MenuContainer>
           <MenuLinks>
-            <NavLink to="/">NEWS</NavLink>
-            <NavLink to="/">BLOG</NavLink>
-            <NavLink to="/" hide={!!userId} onClick={handleJoinOnClick}>
+            <NavLink to="/" href="/">NEWS</NavLink>
+            <NavSagaLink to="/blog" href="/blog">BLOG</NavSagaLink>
+            <NavSagaLink hide={!!userId} onClick={handleJoinOnClick}>
               JOIN
-            </NavLink>
+            </NavSagaLink>
           </MenuLinks>
           <Button hide={!!userId} width="100px" height="35px" onClick={handleLogInOnClick}>
             Log In
@@ -73,12 +75,12 @@ const Navbar = ({ savedLogin: { userId, username } }) => {
                 </WelcomeHeader>
               </AccountMenuRow>
               <AccountMenuRow>
-                <AccountMenuLink to="/">
+                <AccountMenuLink to="/publish">
                   Write a story
                 </AccountMenuLink>
-                <AccountMenuLink to="/">
+                <AccountSagaLink to={`/user/${userId}`} href={`/user/${userId}`}>
                   Your stories
-                </AccountMenuLink>
+                </AccountSagaLink>
               </AccountMenuRow>
               <AccountMenuRow>
                 <AccountMenuLink to="/">

@@ -7,7 +7,7 @@ import {
   Heading,
   Excerpt,
 } from "./styled";
-import Button from "../../../Button";
+import Button from "../../Button";
 
 const FeaturedSection = () => {
   return (
@@ -24,7 +24,7 @@ const FeaturedSection = () => {
             financial strength, customer service, and cost. Read on to see which
             companies made our Best Life Insurance Companies of 2021.
           </Excerpt>
-          <Button>READ MORE</Button>
+          <Button btnStyle="secondary">READ MORE</Button>
         </TextContainer>
       </FeaturedArticleContainer>
     </SectionContainer>

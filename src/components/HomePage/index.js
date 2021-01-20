@@ -2,6 +2,7 @@ import React from "react";
 import HeroImage from "./HeroImage";
 import FeaturedSection from "./FeaturedSection";
 import LatestSection from "./LatesetSection";
+import Footer from "../Footer";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <HeroImage />
       <FeaturedSection />
       <LatestSection />
+      <Footer />
     </>
   );
 };

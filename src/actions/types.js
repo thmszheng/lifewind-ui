@@ -1,3 +1,6 @@
 export const LOGIN = "LOGIN";
 export const SAVE_LOGIN = "SAVE_LOGIN";
 export const CREATE_ACCOUNT = "CREATE_ACCOUNT";
+export const PUBLISH_STORY = "PUBLISH_STORY";
+export const LOAD_BLOG_STORIES = "LOAD_BLOG_STORIES";
+export const LOAD_USER_STORIES = "LOAD_USER_STORIES";

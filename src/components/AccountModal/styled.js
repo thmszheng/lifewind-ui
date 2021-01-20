@@ -44,6 +44,7 @@ export const ModalContainer = styled.div`
   padding: 10px;
 
   opacity: 0;
+  visibility: hidden;
 
   -webkit-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
@@ -59,6 +60,7 @@ export const ModalContainer = styled.div`
   ${({ active }) =>
     active &&
     `
+    visibility: initial;
     z-index: 300;
     display: flex;
     opacity: 1;

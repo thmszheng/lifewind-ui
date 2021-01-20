@@ -7,7 +7,7 @@ import {
   Heading,
   TextContainer,
 } from "./styled";
-import Button from "../../../Button";
+import Button from "../../Button";
 
 const LatestSection = () => {
   return (
@@ -26,7 +26,7 @@ const LatestSection = () => {
               program offered by the insurer to get healthier and more
               energized.
             </Excerpt>
-            <Button>READ MORE</Button>
+            <Button btnStyle="secondary">READ MORE</Button>
           </TextContainer>
         </ArticleCard>
         <ArticleCard>
@@ -40,7 +40,7 @@ const LatestSection = () => {
               of American workers. Employer life insurance is a form of group
               life insurance that’s offered to you and your coworkers.
             </Excerpt>
-            <Button>READ MORE</Button>
+            <Button btnStyle="secondary">READ MORE</Button>
           </TextContainer>
         </ArticleCard>
         <ArticleCard>
@@ -54,7 +54,7 @@ const LatestSection = () => {
               financial professionals and industry groups will want to find a
               way to move back toward toward policymaking.
             </Excerpt>
-            <Button>READ MORE</Button>
+            <Button btnStyle="secondary">READ MORE</Button>
           </TextContainer>
         </ArticleCard>
         <ArticleCard>
@@ -68,7 +68,7 @@ const LatestSection = () => {
               combines long-term care and life insurance into one policy. Like
               hybrid cars, these hybrid policies are increasingly popular.
             </Excerpt>
-            <Button>READ MORE</Button>
+            <Button btnStyle="secondary">READ MORE</Button>
           </TextContainer>
         </ArticleCard>
       </LatestArticlesContainer>
