@@ -9,7 +9,7 @@ function* publishStory({ payload: { id, title, body } }) {
 
   yield axios({
     method: "post",
-    url: "http://localhost:8080/blog/stories",
+    url: "https://lifewindblog-api.com/blog/stories",
     data: {
       ...(id && { id }),
       title,

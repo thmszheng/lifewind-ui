@@ -37,7 +37,7 @@ export const StyledButton = styled.button`
   text-decoration: none;
   cursor: pointer;
 
-  font-family: "Lucida Sans Unicode";
+  font-family: Lucida Sans, Lucida Sans Unicode, Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
 

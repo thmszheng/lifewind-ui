@@ -38,7 +38,8 @@ export const Title = styled.h2`
   font-size: 55px;
   margin-bottom: 25px;
   color: #242736;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
 
   @media screen and (max-width: 750px) {
     font-size: 45px;
@@ -55,7 +56,8 @@ export const MetaInfo = styled.div`
   align-items: center;
   color: dimgrey;
   font-size: 14px;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
 `;
 
 export const AuthorLink = styled(Link)`
@@ -103,7 +105,8 @@ export const PageTitle = styled.h1`
   justify-content: center;
   font-size: 35px;
   font-weight: normal;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
   border-bottom: 2px solid lightgrey;
   color: lightgrey;
   margin: -5px 0 50px 0;

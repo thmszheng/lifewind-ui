@@ -7,7 +7,7 @@ export function* getNewsStory({ id, payload }) {
   yield put(setLoading(true));
   const result = yield axios({
     method: "get",
-    url: `http://localhost:8080/news/stories/${id || payload}`,
+    url: `https://lifewindblog-api.com/news/stories/${id || payload}`,
   }).then((response) => response.data);
   yield put(saveNewsStory(result));
   yield put(setLoading(false));

@@ -6,7 +6,7 @@ import { getUserStories } from "../actions";
 export function* deleteStory({ payload: { id, userId } }) {
   yield axios({
     method: "delete",
-    url: `http://localhost:8080/blog/stories/${id}`,
+    url: `https://lifewindblog-api.com/blog/stories/${id}`,
   }).then((response) => response.data);
   yield put(getUserStories(userId));
 }

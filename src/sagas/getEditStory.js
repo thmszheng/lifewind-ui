@@ -19,7 +19,7 @@ export function* getEditStory({ id, payload }) {
 
   const result = yield axios({
     method: "get",
-    url: `http://localhost:8080/blog/stories/${id || payload}`,
+    url: `https://lifewindblog-api.com/blog/stories/${id || payload}`,
   }).then((response) => response.data);
 
   if (userId === result.userId) {

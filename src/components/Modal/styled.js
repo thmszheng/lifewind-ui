@@ -103,7 +103,8 @@ export const CloseButton = styled(CgClose)`
 export const Heading = styled.h2`
   color: #242736;
   font-size: 25px;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
   margin: -50px 0 15px 0;
 `;
 
@@ -125,7 +126,6 @@ export const InputContainer = styled.div`
 `;
 
 export const FormField = styled(Field)`
-  margin: 10px 0 10px 0;
   width: 50%;
   padding: 12px;
   border-radius: 4px;
@@ -133,7 +133,7 @@ export const FormField = styled(Field)`
   border-color: lightgrey;
   border-width: 1px;
   font-size: 18px;
-  font-family: "Lucida Sans Unicode";
+  font-family: Lucida Sans, Lucida Sans Unicode, Helvetica, Arial, sans-serif;
   margin: 15px;
 
   @media screen and (max-width: 500px) {

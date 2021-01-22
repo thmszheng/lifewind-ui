@@ -60,7 +60,8 @@ export const TextContainer = styled.div`
 `;
 
 export const Heading = styled.h1`
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
   font-weight: bold;
   font-size: 51px;
   color: #242736;

@@ -47,7 +47,8 @@ export const TextContainer = styled.div`
 
 export const Heading = styled.h2`
   font-size: 20px;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
   color: #242736;
   margin-bottom: 20px;
 `;

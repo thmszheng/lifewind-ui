@@ -37,7 +37,8 @@ export const LinksContainer = styled.div`
 `;
 
 export const LinkHeading = styled.h2`
-  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
   font-size: 20px;
   margin-bottom: 24px;
   font-weight: bold;

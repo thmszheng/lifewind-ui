@@ -27,7 +27,7 @@ export const TitleField = styled(Field)`
   border-color: lightgrey;
   border-width: 1px;
   font-size: 20px;
-  font-family: "Lucida Sans Unicode";
+  font-family: Lucida Sans, Lucida Sans Unicode, Helvetica, Arial, sans-serif; ;
 `;
 
 export const EditorField = styled(Field)`

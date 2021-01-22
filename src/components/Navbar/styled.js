@@ -83,7 +83,7 @@ export const LogoContainer = styled.div`
 export const LogoName = styled.span`
   color: white;
   font-size: 30px;
-  font-family: "Lucida Sans Unicode";
+  font-family: Lucida Sans, Lucida Sans Unicode, Helvetica, Arial, sans-serif; ;
 `;
 
 export const LifeWindLogo = styled(GiPaperWindmill)`
@@ -138,13 +138,15 @@ export const WelcomeHeader = styled.h3`
   color: #242736;
   font-weight: normal;
   font-size: 17px;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif; ;
 `;
 
 export const AccountMenuLink = styled(Link)`
   color: dimgray;
   font-size: 16px;
-  font-family: "Trebuchet MS";
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
 
   text-decoration: none;
   cursor: pointer;
