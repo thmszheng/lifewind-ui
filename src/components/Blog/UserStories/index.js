@@ -1,10 +1,18 @@
 import { connect } from "react-redux";
-import { getSavedLogin, getUserStories} from "../../../selectors";
-import UserStories from './userStories';
+import { bindActionCreators } from "redux";
+import { getSavedLogin, getUserStories } from "../../../selectors";
+import UserStories from "./userStories";
+import {
+  getUserStories as getUserStoriesAction,
+  deleteStory,
+} from "../../../actions";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   userStories: getUserStories(state),
   savedLogin: getSavedLogin(state),
 });
 
-export default connect(mapStateToProps)(UserStories);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ getUserStoriesAction, deleteStory }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserStories);

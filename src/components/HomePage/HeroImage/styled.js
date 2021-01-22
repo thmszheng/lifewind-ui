@@ -61,6 +61,7 @@ export const TextContainer = styled.div`
 
 export const Heading = styled.h1`
   font-family: "Trebuchet MS";
+  font-weight: bold;
   font-size: 51px;
   color: #242736;
 
@@ -77,7 +78,8 @@ export const Heading = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: normal;
   color: #404040;
 
   @media screen and (max-width: 1030px) {

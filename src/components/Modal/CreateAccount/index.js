@@ -1,19 +1,28 @@
 import { connect } from "react-redux";
-import { createAccount as onSubmit } from "../../../actions";
+import {
+  createAccount as onSubmit,
+  createAccountSuccess,
+} from "../../../actions";
 import { bindActionCreators } from "redux";
 import { reduxForm } from "redux-form";
 import CreateAccount from "./createAccount";
+import { formValueSelector } from "redux-form";
 
 const FORM_NAME = "CREATE_ACCOUNT";
 
+const selector = formValueSelector(FORM_NAME);
+
 const mapStateToProps = (state) => ({
-  testState: 1,
+  username: selector(state, "username"),
+  email: selector(state, "email"),
+  password: selector(state, "password"),
 });
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       onSubmit,
+      createAccountSuccess,
     },
     dispatch
   );

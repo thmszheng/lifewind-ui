@@ -44,7 +44,7 @@ export const TextContainer = styled.div`
 export const Heading = styled.h2`
   font-size: 35px;
   font-family: "Trebuchet MS";
-  color: black;
+  color: #242736;
   margin-bottom: 20px;
 
   @media screen and (max-width: 1140px) {
@@ -55,7 +55,7 @@ export const Heading = styled.h2`
 export const Excerpt = styled.p`
   max-width: 650px;
   font-size: 22px;
-  color: #404040;
+  color: dimgrey;
   margin-bottom: 20px;
 
   @media screen and (max-width: 1140px) {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { GiPaperWindmill } from "react-icons/gi";
-import { FaBars, FaUserCircle } from "react-icons/fa";
+import { FaBars, FaUserCircle, FaRegUserCircle, FaTimes } from "react-icons/fa";
 
 export const NavContainer = styled.nav`
   background-color: #242736;
@@ -29,6 +29,17 @@ export const MenuBars = styled(FaBars)`
   }
 `;
 
+export const CloseMenu = styled(FaTimes)`
+  color: white;
+  display: none;
+
+  @media screen and (max-width: 850px) {
+    display: initial;
+    font-size: 30px;
+    cursor: pointer;
+  }
+`;
+
 export const MenuContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -39,7 +50,7 @@ export const MenuLinks = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-right: 20px;
-  
+
   @media screen and (max-width: 850px) {
     display: none;
   }
@@ -51,23 +62,6 @@ export const NavLink = styled(Link)`
   font-size: 25px;
   color: white;
   margin: 0 25px 0 25px;
-  
-  ${({ hide }) => hide && `
-    display: none;
-  `};
-`;
-
-
-export const NavSagaLink = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 25px;
-  color: white;
-  margin: 0 25px 0 25px;
-  
-  ${({ hide }) => hide && `
-    display: none;
-  `};
 `;
 
 export const LogoContainer = styled.div`
@@ -103,23 +97,39 @@ export const AccountLogo = styled(FaUserCircle)`
   color: white;
   font-size: 30px;
   cursor: pointer;
-  
-  ${({ show }) => show && `
+
+  ${({ show }) =>
+    show &&
+    `
     display: initial;
   `};
-`
+`;
+
+export const CloseAccountLogo = styled(FaRegUserCircle)`
+  display: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+
+  ${({ show }) =>
+    show &&
+    `
+    display: initial;
+  `};
+`;
+
 export const DropdownContainer = styled.div`
   display: flex;
   flex-direction: column;
-  
+
   position: absolute;
-  right: 20px;
-  bottom: -240px;
+  right: 0;
+  top: 80px;
   z-index: 4;
-  
+
   width: 200px;
   height: 250px;
-  
+
   color: lightgrey;
   background-color: white;
   -moz-box-shadow: 0 0 4px grey;
@@ -136,10 +146,10 @@ export const AccountMenuRow = styled.div`
   height: 100%;
 `;
 
-export const  WelcomeHeader = styled.h3`
+export const WelcomeHeader = styled.h3`
   color: #242736;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 17px;
   font-family: "Trebuchet MS";
 `;
 
@@ -147,26 +157,53 @@ export const AccountMenuLink = styled(Link)`
   color: dimgray;
   font-size: 16px;
   font-family: "Trebuchet MS";
-  
+
   text-decoration: none;
   cursor: pointer;
   margin: 10px 0 10px 0;
-  
+
   &:hover {
     color: black;
   }
 `;
 
-export const AccountSagaLink = styled.a`
-  color: dimgray;
-  font-size: 16px;
-  font-family: "Trebuchet MS";
-  
-  text-decoration: none;
-  cursor: pointer;
-  margin: 10px 0 10px 0;
-  
-  &:hover {
+export const SideNavMenu = styled.div`
+  top: 80px;
+  left: 0;
+  position: fixed;
+  background-color: white;
+  width: 170px;
+  margin: 0;
+  z-index: 100;
+
+  -moz-box-shadow: 0 0 4px grey;
+  -webkit-box-shadow: 0 0 4px grey;
+  box-shadow: 0 0 4px grey;
+
+  & > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  & li {
+    padding: 25px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  & a {
+    color: dimgrey;
+    font-size: 21px;
+    margin: 0;
+  }
+
+  & a:hover {
     color: black;
+  }
+
+  @media screen and (min-width: 850px) {
+    display: none;
   }
 `;

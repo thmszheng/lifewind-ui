@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionContainer, SectionHeading } from "../styled";
+import { SectionContainer, SectionHeading, ReadMoreLink } from "../styled";
 import {
   FeaturedArticleContainer,
   ArticleImageWrapper,
@@ -7,9 +7,8 @@ import {
   Heading,
   Excerpt,
 } from "./styled";
-import Button from "../../Button";
 
-const FeaturedSection = () => {
+const FeaturedSection = ({ featuredStory: { id, title, body } }) => {
   return (
     <SectionContainer bg="light">
       <SectionHeading>FEATURED</SectionHeading>
@@ -18,13 +17,9 @@ const FeaturedSection = () => {
           <img src="/images/featured_image.jpg" alt="happy family" />
         </ArticleImageWrapper>
         <TextContainer>
-          <Heading>Best Life Insurance Companies of 2021</Heading>
-          <Excerpt>
-            We evaluated dozens of companies, scoring each on elements such as
-            financial strength, customer service, and cost. Read on to see which
-            companies made our Best Life Insurance Companies of 2021.
-          </Excerpt>
-          <Button btnStyle="secondary">READ MORE</Button>
+          <Heading>{title}</Heading>
+          <Excerpt>{body}</Excerpt>
+          <ReadMoreLink to={`/news/${id}`}>READ MORE</ReadMoreLink>
         </TextContainer>
       </FeaturedArticleContainer>
     </SectionContainer>

@@ -2,17 +2,20 @@ import styled from "styled-components";
 import { CgClose } from "react-icons/cg";
 import { Field } from "redux-form";
 
-export const AccountModalOverlay = styled.div`
+export const ModalOverlay = styled.div`
   position: fixed;
+  top: 80px;
+  left: 0;
   z-index: -1;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0);
+  pointer-events: none;
 
   -webkit-transition: background-color 0.2s ease-in;
   -moz-transition: background-color 0.2s ease-in;
@@ -24,6 +27,7 @@ export const AccountModalOverlay = styled.div`
     active &&
     `
     z-index: 200;
+    pointer-events: auto;
     background-color: rgba(255,255,255,0.6);
   `};
 `;
@@ -39,12 +43,14 @@ export const ModalContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 600px;
   height: 600px;
   padding: 10px;
 
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 
   -webkit-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in, transform 0.2s ease-in;
@@ -60,11 +66,18 @@ export const ModalContainer = styled.div`
   ${({ active }) =>
     active &&
     `
+    pointer-events: auto;
     visibility: initial;
     z-index: 300;
     display: flex;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+  `};
+
+  ${({ size }) =>
+    size === "small" &&
+    `
+      height: 330px;
   `};
 
   @media screen and (max-width: 750px) {
@@ -77,9 +90,14 @@ export const CloseButton = styled(CgClose)`
   position: absolute;
   top: 10px;
   right: 10px;
+  color: dimgrey;
 
   font-size: 20px;
   cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
 `;
 
 export const Heading = styled.h2`
@@ -121,4 +139,10 @@ export const FormField = styled(Field)`
   @media screen and (max-width: 500px) {
     width: 65%;
   }
+`;
+
+export const StatusMessage = styled.p`
+  ${({ color }) => `
+      color: ${color}
+  `};
 `;

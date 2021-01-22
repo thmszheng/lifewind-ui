@@ -1,48 +1,59 @@
 import { put, takeLeading } from "redux-saga/effects";
-import { CREATE_ACCOUNT, LOGIN } from "../actions/types";
+import { CREATE_ACCOUNT, LOGIN, LOGOUT } from "../actions/types";
 import { saveLogin } from "../actions";
 import { Auth } from "aws-amplify";
 
-function* createAccount({
-  payload: { username: preferred_username, email, password },
-}) {
-  try {
-    const result = yield Auth.signUp({
-      username: email,
-      password,
-      attributes: {
-        preferred_username,
-      },
-    });
+// function* createAccount({
+//   payload: { username: preferred_username, email, password },
+// }) {
+//   try {
+//     yield Auth.signUp({
+//       username: email,
+//       password,
+//       attributes: {
+//         preferred_username,
+//       },
+//     });
+//   } catch (error) {
+//     console.log("error signing up:", error);
+//   }
+// }
+//
+// function* login({ payload: { email, password } }) {
+//   try {
+//     const {
+//       attributes: { preferred_username },
+//     } = yield Auth.signIn(email, password);
+//
+//     const tokens = yield Auth.currentSession();
+//
+//     const userId = tokens.getIdToken().payload["cognito:username"];
+//
+//     yield put(saveLogin({ userId, username: preferred_username }));
+//   } catch (error) {
+//     console.log("error logging in:", error);
+//   }
+// }
 
+function* logout() {
+  try {
+    yield Auth.signOut();
+    yield put(saveLogin({ userId: null, username: null }));
   } catch (error) {
-    console.log("error signing up:", error);
+    console.log("error logging out", error);
   }
 }
 
-function* login({ payload: { email, password } }) {
-  try {
-    const {
-      attributes: { preferred_username },
-    } = yield Auth.signIn(email, password);
+// function* takeCreateAccount() {
+//   yield takeLeading(CREATE_ACCOUNT, createAccount);
+// }
+//
+// function* takeLogin() {
+//   yield takeLeading(LOGIN, login);
+// }
 
-    const tokens = yield Auth.currentSession();
-
-    const userId = tokens.getIdToken().payload["cognito:username"];
-
-
-    yield put(saveLogin({ userId, username: preferred_username }));
-  } catch (error) {
-    console.log("error logging in:", error);
-  }
+function* takeLogout() {
+  yield takeLeading(LOGOUT, logout);
 }
 
-function* takeCreateAccount() {
-  yield takeLeading(CREATE_ACCOUNT, createAccount);
-}
-
-function* takeLogin() {
-  yield takeLeading(LOGIN, login);
-}
-
-export default [takeCreateAccount, takeLogin];
+export default [takeLogout];

@@ -48,12 +48,12 @@ export const TextContainer = styled.div`
 export const Heading = styled.h2`
   font-size: 20px;
   font-family: "Trebuchet MS";
-  color: black;
+  color: #242736;
   margin-bottom: 20px;
 `;
 
 export const Excerpt = styled.p`
   font-size: 16px;
-  color: #404040;
+  color: dimgrey;
   margin-bottom: 20px;
 `;

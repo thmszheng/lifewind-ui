@@ -12,9 +12,21 @@ const secondaryButtonStyles = css`
   border-color: white;
 `;
 
+const borderSecondary = css`
+  color: dimgrey;
+  background-color: white;
+  border-color: dimgrey;
+
+  &:hover {
+    color: black;
+    border-color: black;
+  }
+`;
+
 const buttonStyles = {
   primary: primaryButtonStyles,
   secondary: secondaryButtonStyles,
+  borderSecondary,
 };
 
 export const StyledButton = styled.button`
@@ -29,17 +41,17 @@ export const StyledButton = styled.button`
   font-size: 15px;
   font-weight: bold;
 
-  ${({ width, height }) =>
-    width &&
+  ${({ width, height, margin }) =>
     `
     width: ${width};
     height: ${height};
+    margin: ${margin};
   `};
 
   ${({ btnStyle }) => `
     ${buttonStyles[btnStyle]}
   `};
-  
+
   ${({ hide }) =>
     hide &&
     `

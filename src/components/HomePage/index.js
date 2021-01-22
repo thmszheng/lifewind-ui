@@ -1,18 +1,14 @@
-import React from "react";
-import HeroImage from "./HeroImage";
-import FeaturedSection from "./FeaturedSection";
-import LatestSection from "./LatesetSection";
-import Footer from "../Footer";
+import HomePage from "./homepage";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { getNewsStories } from "../../selectors";
+import { getNewsStories as getNewsStoriesAction } from "../../actions";
 
-const HomePage = () => {
-  return (
-    <>
-      <HeroImage />
-      <FeaturedSection />
-      <LatestSection />
-      <Footer />
-    </>
-  );
-};
+const mapStateToProps = (state) => ({
+  newsStories: getNewsStories(state),
+});
 
-export default HomePage;
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ getNewsStoriesAction }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

@@ -1,7 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import { MdEdit } from "react-icons/md";
-import { FaTrash } from "react-icons/fa";
 
 export const BlogContainer = styled.div`
   display: flex;
@@ -10,6 +8,14 @@ export const BlogContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 150px 50px 50px 50px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 150px 70px 50px 70px;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 150px 30px 50px 30px;
+  }
 `;
 
 export const StoryContainer = styled.div`
@@ -18,16 +24,29 @@ export const StoryContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 800px;
-  padding-bottom: 50px;
-  margin: 20px 0 20px 0;
-  
+  padding-bottom: 85px;
+  margin: 35px 0 35px 0;
+
   border-bottom: 1px lightgrey solid;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h2`
   font-size: 55px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   color: #242736;
+  font-family: "Trebuchet MS";
+
+  @media screen and (max-width: 750px) {
+    font-size: 45px;
+  }
+
+  @media screen and (max-width: 550px) {
+    font-size: 40px;
+  }
 `;
 
 export const MetaInfo = styled.div`
@@ -39,35 +58,62 @@ export const MetaInfo = styled.div`
   font-family: "Trebuchet MS";
 `;
 
-export const AuthorLink = styled.a`
+export const AuthorLink = styled(Link)`
   color: dimgrey;
   text-decoration: none;
-  cursor: pointer;
-  margin-right: 15px;
+  margin-right: 25px;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  ${({ navigate }) =>
+    navigate === false &&
+    `
+    cursor: initial;
+    &:hover {
+      text-decoration: none;
+    }
+  `}
 `;
 
 export const Body = styled.p`
   font-size: 20px;
-  margin: 20px 0 20px 0;
+  margin: 20px 0 35px 0;
+  white-space: pre-wrap;
+  color: dimgrey;
+
+  @media screen and (max-width: 550px) {
+    font-size: 17px;
+  }
 `;
 
-export const ReadMoreLink = styled.a`
+export const ReadMoreLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   font-size: 15px;
   color: dimgrey;
   font-weight: bold;
+
+  &:hover {
+    color: black;
+  }
 `;
 
-export const EditIcon = styled(MdEdit)`
-  font-size: 17px;
-  cursor: pointer;
-  margin: 0 15px 0 20px;
-  color: dimgrey;
-`;
+export const PageTitle = styled.h1`
+  justify-content: center;
+  font-size: 35px;
+  font-weight: normal;
+  font-family: "Trebuchet MS";
+  border-bottom: 2px solid lightgrey;
+  color: lightgrey;
+  margin: -5px 0 50px 0;
+  padding: 15px;
 
-export const DeleteIcon = styled(FaTrash)`
-  font-size: 13px;
-  cursor: pointer;
-  color: dimgrey;
+  @media screen and (max-width: 750px) {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 550px) {
+    font-size: 27px;
+  }
 `;

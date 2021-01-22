@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
-import { publishStory as onSubmit } from "../../actions";
+import { publishStory as onSubmit } from "../../../actions";
 import { reduxForm } from "redux-form";
 import { bindActionCreators } from "redux";
-import PublishStory from './publishStory';
-
+import PublishStory from "./publishStory";
 
 const FORM_NAME = "NEW_STORY";
 
@@ -17,4 +16,7 @@ const mapDispatchToProps = (dispatch) =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({ form: FORM_NAME })(PublishStory));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(reduxForm({ form: FORM_NAME })(PublishStory));

@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "aws-amplify": "^3.3.14",
     "axios": "^0.21.1",
-    "history": "^5.0.0",
+    "history": "4.10.1",
     "markdown-it": "^12.0.4",
     "prettier": "^2.2.1",
     "react": "^17.0.1",

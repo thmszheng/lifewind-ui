@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import getStore from "./getStore";
 import Amplify from "aws-amplify";
+import history from "./history";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const store = getStore();
 
@@ -22,7 +24,9 @@ Amplify.configure(config);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

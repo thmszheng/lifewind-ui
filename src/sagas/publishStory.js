@@ -1,27 +1,31 @@
-import { takeLeading, select } from "redux-saga/effects";
-import {PUBLISH_STORY} from "../actions/types";
+import { takeLeading, select, put } from "redux-saga/effects";
+import { PUBLISH_STORY } from "../actions/types";
 import { getSavedLogin } from "../selectors";
-import axios from 'axios';
+import { getBlogStories, getUserStories } from "../actions";
+import axios from "axios";
 
-function* publishStory({ payload: { title, body } }) {
+function* publishStory({ payload: { id, title, body } }) {
   const { userId, username } = yield select(getSavedLogin);
 
-  const result = yield axios({
-    method: 'post',
-    url: 'http://localhost:8080/api/v1/stories',
+  yield axios({
+    method: "post",
+    url: "http://localhost:8080/blog/stories",
     data: {
+      ...(id && { id }),
       title,
       body,
       userId,
-      username
-    }
+      username,
+    },
   });
 
-  console.log(result);
+  if (userId) {
+    yield put(getUserStories(userId));
+  } else {
+    yield put(getBlogStories());
+  }
 }
 
-function* takePublishStory() {
+export default function* takePublishStory() {
   yield takeLeading(PUBLISH_STORY, publishStory);
 }
-
-export default takePublishStory;
