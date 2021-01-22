@@ -27,9 +27,11 @@ export const SectionHeading = styled.h1`
 export const ReadMoreLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   color: dimgrey;
   font-weight: bold;
+  font-family: Trebuchet MS, Lucida Sans, Lucida Sans Unicode, Helvetica, Arial,
+    sans-serif;
 
   &:hover {
     color: black;

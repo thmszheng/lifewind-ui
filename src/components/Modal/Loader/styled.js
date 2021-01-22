@@ -21,6 +21,14 @@ export const LoaderContainer = styled.div`
   transition: background-color 0.2s ease-in;
 `;
 
+export const SpinnerWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const spin = keyframes`
   from {
     transform: rotate(0deg);
@@ -38,7 +46,6 @@ export const Spinner = styled.div`
   z-index: 501;
   width: 50px;
   height: 50px;
-  margin-top: -20px;
   background-image: url("/images/spinner.png");
   background-size: cover;
 
@@ -46,9 +53,9 @@ export const Spinner = styled.div`
 `;
 
 export const SpinnerBase = styled.div`
-  position: absolute;
+  position: relative;
   z-index: 500;
-  margin-top: 13px;
+  top: -17px;
   width: 4px;
   height: 15px;
   background-color: #242736;

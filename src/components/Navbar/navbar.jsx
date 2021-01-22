@@ -85,6 +85,7 @@ const Navbar = ({ savedLogin: { userId, username }, logout }) => {
             width="100px"
             height="35px"
             onClick={handleLogInOnClick}
+            btnStyle="secondary"
           >
             Log In
           </Button>
