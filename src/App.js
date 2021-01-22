@@ -18,19 +18,20 @@ import { bindActionCreators } from "redux";
 
 function App({ saveLogin }) {
   useEffect(() => {
-    onLoad();
-  }, []);
+    async function onLoad() {
+      try {
+        await Auth.currentSession();
+        const {
+          username: userId,
+          attributes: { preferred_username: username },
+        } = await Auth.currentUserInfo();
+        saveLogin({ userId, username });
+      } catch (error) {}
+    }
 
-  async function onLoad() {
-    try {
-      await Auth.currentSession();
-      const {
-        username: userId,
-        attributes: { preferred_username: username },
-      } = await Auth.currentUserInfo();
-      saveLogin({ userId, username });
-    } catch (error) {}
-  }
+    onLoad();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="App">
@@ -52,9 +53,7 @@ function App({ saveLogin }) {
   );
 }
 
-const mapStateToProps = () => {};
-
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ saveLogin }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

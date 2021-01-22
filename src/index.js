@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import getStore from "./getStore";
 import Amplify from "aws-amplify";
 import history from "./history";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 const store = getStore();
 

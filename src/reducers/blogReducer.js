@@ -5,7 +5,7 @@ import {
 } from "../actions/types";
 import { saveBlogStories, saveUserStories, saveStory } from "../selectors";
 
-export default (state = {}, { type, payload }) => {
+const blogReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case SAVE_BLOG_STORIES:
       return saveBlogStories(state, payload);
@@ -17,3 +17,5 @@ export default (state = {}, { type, payload }) => {
       return state;
   }
 };
+
+export default blogReducer;

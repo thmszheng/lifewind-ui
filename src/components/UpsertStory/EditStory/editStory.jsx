@@ -2,15 +2,9 @@ import React, { useState, useEffect } from "react";
 import MarkdownIt from "markdown-it";
 import "react-markdown-editor-lite/lib/index.css";
 import "../editor.css";
-import {
-  TitleField,
-  EditorField,
-  NewStoryContainer,
-  UpsertStoryButton,
-} from "../styled";
+import { TitleField, EditorField, NewStoryContainer } from "../styled";
 import MdEditor from "react-markdown-editor-lite";
 import Button from "../../Button";
-import { submit } from "redux-form";
 
 const mdParser = new MarkdownIt();
 
@@ -24,7 +18,6 @@ const editorConfig = {
 const EditStory = ({
   form,
   handleSubmit,
-  onSubmit,
   change,
   savedLogin: { userId },
   story: { userId: storyUserId, body },
@@ -38,6 +31,7 @@ const EditStory = ({
 
   useEffect(() => {
     editStoryAction(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

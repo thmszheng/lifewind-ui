@@ -1,5 +1,5 @@
 import { put, takeLeading } from "redux-saga/effects";
-import { CREATE_ACCOUNT, LOGIN, LOGOUT } from "../actions/types";
+import { LOGOUT } from "../actions/types";
 import { saveLogin } from "../actions";
 import { Auth } from "aws-amplify";
 
@@ -56,4 +56,4 @@ function* takeLogout() {
   yield takeLeading(LOGOUT, logout);
 }
 
-export default [takeLogout];
+export default takeLogout;

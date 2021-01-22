@@ -73,6 +73,7 @@ const CreateAccount = ({
               name="password"
               type="password"
               placeholder="Your Password"
+              autoComplete="on"
             />
           </InputContainer>
           <Button

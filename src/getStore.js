@@ -8,7 +8,7 @@ const initialState = {};
 const sagaMiddleWare = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default () => {
+const getStore = () => {
   if (!store) {
     store = createStore(
       reducers,
@@ -20,3 +20,5 @@ export default () => {
   }
   return store;
 };
+
+export default getStore;

@@ -11,7 +11,7 @@ import getEditStory from "./getEditStory";
 import deleteStory from "./deleteStory";
 
 const sagas = [
-  ...account,
+  account,
   // sagaRouter,
   publishStory,
   getBlogStories,

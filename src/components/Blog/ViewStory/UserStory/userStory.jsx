@@ -17,6 +17,7 @@ const UserStory = ({
 }) => {
   useEffect(() => {
     getStoryAction(storyId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <BlogContainer>

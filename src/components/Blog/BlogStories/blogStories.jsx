@@ -13,6 +13,7 @@ import {
 const BlogStories = ({ blogStories, getBlogStoriesAction }) => {
   useEffect(() => {
     getBlogStoriesAction();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

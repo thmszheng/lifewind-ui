@@ -69,7 +69,13 @@ const Navbar = ({ savedLogin: { userId, username }, logout }) => {
             <NavLink to="/news">NEWS</NavLink>
             <NavLink to="/blog">BLOG</NavLink>
             {!userId && (
-              <NavLink to="/" onClick={handleJoinOnClick}>
+              <NavLink
+                to="/"
+                onClick={(e) => {
+                  handleJoinOnClick();
+                  e.preventDefault();
+                }}
+              >
                 JOIN
               </NavLink>
             )}
@@ -83,17 +89,12 @@ const Navbar = ({ savedLogin: { userId, username }, logout }) => {
             Log In
           </Button>
           <AccountMenuContainer>
-            {isMenuDropdownVisible ? (
-              <CloseAccountLogo
-                show={!!userId}
-                onClick={handleMenuDropdownOnClick}
-              />
-            ) : (
-              <AccountLogo
-                show={!!userId}
-                onClick={handleMenuDropdownOnClick}
-              />
-            )}
+            {userId &&
+              (isMenuDropdownVisible ? (
+                <CloseAccountLogo onClick={handleMenuDropdownOnClick} />
+              ) : (
+                <AccountLogo onClick={handleMenuDropdownOnClick} />
+              ))}
             {isMenuDropdownVisible && (
               <DropdownContainer ref={menuDropdownRef}>
                 <AccountMenuRow>

@@ -6,8 +6,6 @@ import PublishStory from "./publishStory";
 
 const FORM_NAME = "NEW_STORY";
 
-const mapStateToProps = () => ({});
-
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
@@ -17,6 +15,6 @@ const mapDispatchToProps = (dispatch) =>
   );
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(reduxForm({ form: FORM_NAME })(PublishStory));

@@ -1,7 +1,13 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { GiPaperWindmill } from "react-icons/gi";
 import { FaBars, FaUserCircle, FaRegUserCircle, FaTimes } from "react-icons/fa";
+
+const accountLogoStyle = css`
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+`;
 
 export const NavContainer = styled.nav`
   background-color: #242736;
@@ -93,29 +99,11 @@ export const AccountMenuContainer = styled.div`
 `;
 
 export const AccountLogo = styled(FaUserCircle)`
-  display: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-
-  ${({ show }) =>
-    show &&
-    `
-    display: initial;
-  `};
+  ${accountLogoStyle}
 `;
 
 export const CloseAccountLogo = styled(FaRegUserCircle)`
-  display: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-
-  ${({ show }) =>
-    show &&
-    `
-    display: initial;
-  `};
+  ${accountLogoStyle}
 `;
 
 export const DropdownContainer = styled.div`
