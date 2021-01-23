@@ -72,8 +72,8 @@ const EditStory = ({
           height="40px"
           type="submit"
           onClick={() => {
-            handleSubmit();
             history.push(`/user/${userId}`);
+            handleSubmit();
           }}
         >
           Save

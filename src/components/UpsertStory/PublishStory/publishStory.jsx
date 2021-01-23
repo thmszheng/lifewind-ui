@@ -15,7 +15,13 @@ const editorConfig = {
   },
 };
 
-const PublishStory = ({ form, handleSubmit, change, history }) => {
+const PublishStory = ({
+  form,
+  handleSubmit,
+  change,
+  savedLogin: { userId },
+  history,
+}) => {
   const handleEditorChange = ({ text }) => {
     change("body", text);
   };
@@ -41,8 +47,8 @@ const PublishStory = ({ form, handleSubmit, change, history }) => {
         height="40px"
         type="submit"
         onClick={() => {
+          history.push(`/user/${userId}`);
           handleSubmit();
-          history.push(`/blog`);
         }}
       >
         Publish
