@@ -50,12 +50,15 @@ export const MenuContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
 `;
 
 export const MenuLinks = styled.div`
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin-right: 20px;
+  height: 100%;
 
   @media screen and (max-width: 850px) {
     display: none;
@@ -63,11 +66,28 @@ export const MenuLinks = styled.div`
 `;
 
 export const NavLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   cursor: pointer;
   font-size: 25px;
   color: white;
   margin: 0 25px 0 25px;
+  height: 100%;
+
+  ${({ highlight }) =>
+    highlight &&
+    `
+    padding-top: 4px;
+    border-bottom: 4px solid transparent;
+    &:hover {
+      border-bottom: 4px solid white;
+      -moz-box-shadow: 0 1px 1px -1px gray;
+      -webkit-box-shadow: 0 1px 1px -1px gray;
+      box-shadow: 0 1px 1px -1px gray;
+    }
+  `};
 `;
 
 export const LogoContainer = styled.div`

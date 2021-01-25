@@ -66,8 +66,12 @@ const Navbar = ({ savedLogin: { userId, username }, logout }) => {
         </NavLink>
         <MenuContainer>
           <MenuLinks>
-            <NavLink to="/news">NEWS</NavLink>
-            <NavLink to="/blog">BLOG</NavLink>
+            <NavLink to="/news" highlight>
+              NEWS
+            </NavLink>
+            <NavLink to="/blog" highlight>
+              BLOG
+            </NavLink>
             {!userId && (
               <NavLink
                 to="/"
@@ -75,6 +79,7 @@ const Navbar = ({ savedLogin: { userId, username }, logout }) => {
                   handleJoinOnClick();
                   e.preventDefault();
                 }}
+                highlight
               >
                 JOIN
               </NavLink>
